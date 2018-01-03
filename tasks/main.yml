@@ -44,5 +44,6 @@
     max_size: "{{ item.max_size }}"
     desired_capacity: "{{ item.desired_capacity }}"
     target_group_arns: "{{ target_group_arn_list }}"
+    wait_timeout: "{{ ec2_asg_wait_timeout }}"
   with_items: "{{ ec2_asg_facts.results }}"
   when: "item.target_group_arns|length > 0 and source_target_group in item.target_group_names"

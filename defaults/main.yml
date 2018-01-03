@@ -1,2 +1,1 @@
----
-# defaults file for ec2_asg_target_group. See the README file.
+ec2_asg_wait_timeout: 1800
