@@ -1,5 +1,5 @@
 - name: find ASGs
-  ec2_asg_facts:
+  ec2_asg_info:
     region: "{{ region }}"
     profile: "{{ profile|default(omit) }}"
     tags:
@@ -8,7 +8,7 @@
   register: ec2_asg_facts
 
 - name: find the target TGs
-  elb_target_group_facts:
+  elb_target_group_info:
     region: "{{ region }}"
     profile: "{{ profile|default(omit) }}"
     names: "{{ target_target_groups }}"
